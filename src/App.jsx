@@ -1,12 +1,10 @@
 import { useState } from 'react'
 import './App.css'
 import { micromark } from 'micromark'
-let postList = [];
-const posts = [];
-const articleContainer = document.querySelector(".articles-container");
+import PostTeaser from './components/PostTeaser';
+
 
 function App() {
-  getPostList();
 
   return (
     <>
@@ -39,33 +37,12 @@ function App() {
         </div>
       </div>
       <div className="articles-container">
-        
+        <PostTeaser />
+        <PostTeaser />
+        <PostTeaser />
       </div>
     </>
   )
-}
-
-function getPostList() {
-  const postListPath = '/blog/posts/postlist.json';
-  fetch(postListPath)
-  .then((response) => response.json())
-  .then((data) => {
-    postList = data.posts;
-    getPosts(postList);
-  })
-  .catch((e) => console.error("Uh oh! " + e));
-}
-
-function getPosts(postList) {
-  const postsDir = "/blog/posts";
-  postList.forEach((post) => {
-    console.log("Fetching post " + post.fileName);
-    fetch(`${postsDir}/${post.fileName}`)
-      .then((response) => {
-        posts.push(response.text());
-      })
-  })
-  console.log(posts);
 }
 
 export default App;
