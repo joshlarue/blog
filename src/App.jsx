@@ -38,11 +38,11 @@ function App() {
       </div>
       <div className="articles-container">
         <PostTeaser />
-        <PostTeaser />
-        <PostTeaser />
       </div>
     </>
   )
 }
+
+
 
 export default App;

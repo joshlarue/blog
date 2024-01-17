@@ -4,19 +4,25 @@
       "id": 1,
       "title": "first post",
       "fileName": "post1.md",
-      "date": "January 15, 2024"
+      "date": "January 15, 2024",
+      "image": "/blog/public/vite.svg",
+      "img-alt": "vite svg"
     },
     {
       "id": 2,
       "title": "second post",
       "fileName": "post2.md",
-      "date": "January 15, 2024"
+      "date": "January 15, 2024",
+      "image": "/blog/public/vite.svg",
+      "img-alt": "vite svg"
     },
     {
       "id": 3,
       "title": "third post",
       "fileName": "post3.md",
-      "date": "January 15, 2024"
+      "date": "January 15, 2024",
+      "image": "/blog/public/vite.svg",
+      "img-alt": "vite svg"
     }
   ]
 }
