@@ -6,7 +6,7 @@
       "fileName": "post1.md",
       "date": "January 15, 2024",
       "image": "/blog/public/vite.svg",
-      "img-alt": "vite svg"
+      "alt": "vite svg"
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "fileName": "post2.md",
       "date": "January 15, 2024",
       "image": "/blog/public/vite.svg",
-      "img-alt": "vite svg"
+      "alt": "vite svg"
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "fileName": "post3.md",
       "date": "January 15, 2024",
       "image": "/blog/public/vite.svg",
-      "img-alt": "vite svg"
+      "alt": "vite svg"
     }
   ]
 }
