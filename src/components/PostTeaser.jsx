@@ -75,18 +75,17 @@ async function getPosts(postList) {
 
 function populatePosts(postList, posts) {
   const postTeaserBkg = document.querySelector(".post-teaser-bkg");
-  postList.posts.forEach((post) => {
+  postTeaserBkg.textContent = '';
+  postList.posts.forEach((post, index) => {
     console.log(post.title);
     let teaserHeader = document.createElement("div");
     postTeaserBkg.append(teaserHeader);
     teaserHeader.textContent = post.title;
     teaserHeader.classList.add("post-teaser-header");
-  })
 
-  posts.forEach((post) => {
     let postTeaserText = document.createElement("div");
     postTeaserText.classList.add("post-teaser-text");
-    postTeaserText.innerHTML = micromark(post);
+    postTeaserText.innerHTML = micromark(posts[index]);
     postTeaserBkg.appendChild(postTeaserText);
   })
 
