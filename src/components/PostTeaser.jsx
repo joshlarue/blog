@@ -36,7 +36,7 @@ function renderTeasers(postList, posts, props) {
           <div className="teaser-header"><h4>{post.title}</h4></div>
           <div className="teaser-text" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(micromark(posts[index]))}}></div>
           <div className="more-info">
-            <Link to={"post/" + post.id} className="teaser-read-more" onClick={props.setRequestedPostId(post.id)}><p>read more</p></Link>
+            <Link to={"post/" + post.id} className="teaser-read-more" onClick={() => handleClick(post.id, props)}><p>read more</p></Link>
             { index === 0 ? <div className="teaser-featured-tag"><p>Featured article</p></div> : null }
             <div className="teaser-date"><p>{post.date}</p></div>
           </div>
@@ -49,6 +49,10 @@ function renderTeasers(postList, posts, props) {
       </div>
   ));
 }
+
+const handleClick = (postId, props) => {
+  props.setRequestedPostId(postId);
+};
 
 // need this for info to style teaser boxes :)
 async function getPostList() {
