@@ -27,9 +27,15 @@ function App() {
               <h4>My site and socials</h4>
             </div>
             <div className="site-icons">
-              <img src="/blog/src/assets/mastodon-logo.png" alt="mastodon logo" className="social-icon-img"></img>
-              <img src="/blog/src/assets/linkedin-logo.png" alt="linkedin logo" className="social-icon-img"></img>
-              <img src="/blog/src/assets/headshot.png" alt="a lovely portrait of me" className="social-icon-img" />
+              <div className="social-icon-img-wrapper">
+                <img src="/blog/src/assets/mastodon-logo.png" alt="mastodon logo" className="social-icon-img"></img>
+              </div>
+              <div className="social-icon-img-wrapper">
+                <img src="/blog/src/assets/linkedin-logo.png" alt="linkedin logo" className="social-icon-img"></img>
+              </div>
+              <div className="social-icon-img-wrapper">
+                <img src="/blog/src/assets/headshot.png" alt="a lovely portrait of me" className="social-icon-img" />
+              </div>
             </div>
           </div>
           <div className="cool-things">

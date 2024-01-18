@@ -37,7 +37,7 @@ function renderTeasers(postList, posts, props) {
           <div className="teaser-text" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(micromark(posts[index]))}}></div>
           <div className="more-info">
             <Link to={"post/" + post.id} className="teaser-read-more" onClick={props.setRequestedPostId(post.id)}><p>read more</p></Link>
-            <div className="teaser-featured-tag"><p>{ index === 0 ? "Featured article" : null }</p></div>
+            { index === 0 ? <div className="teaser-featured-tag"><p>Featured article</p></div> : null }
             <div className="teaser-date"><p>{post.date}</p></div>
           </div>
         </div>
@@ -73,7 +73,7 @@ async function getPostList() {
   }
 }
 
-async function getPosts(postList, props) {
+async function getPosts(postList) {
   const postsDir = "/blog/posts";
   const fetchPromises = postList.map(async (post) => {
     const response = await fetch(`${postsDir}/${post.id}.md`);

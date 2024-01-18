@@ -9,9 +9,14 @@ function Post(props) {
 
   useEffect(() => {
     const fetchData = async () => {
-      setPostInfo(await getPostInfo(postId));
-      setPost(await getPost(postId));
+      try {
+        setPostInfo(await getPostInfo(postId));
+        setPost(await getPost(postId));
+      } catch (e) {
+        console.error("Uh oh! " + e);
+      }
     }
+  
     fetchData();
   }, [postId]);
 
@@ -20,18 +25,22 @@ function Post(props) {
       {renderPost(postInfo, fetchedPost)}
     </div>
   )
-}//DOMPurify.sanitize(micromark(post)) <div className="post-text" dangerouslySetInnerHTML={{__html: "test"}}></div>
+}
 
 function renderPost(postInfo, post) {
+  if (!postInfo) {
+    return null;
+  }
   return (
       <div className="post-bkg" key={postInfo.id}>
         <div className="post-header"><h4>{postInfo.title}</h4></div>
         
         <div className="more-info">
           <div className="post-read-more"><p>read more</p></div>
-          <div className="post-featured-tag"><p>{ postInfo.id === 0 ? "Featured article" : null }</p></div>
+          { postInfo.id === 0 ? <div className="post-featured-tag"><p>Featured article</p></div> : null }
           <div className="post-date"><p>{postInfo.date}</p></div>
         </div>
+        <div className="post-text" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(micromark(post))}}></div>
         <div className="post-img-container">
           <img className="post-img" src="/blog/src/assets/programming.jpg" alt={postInfo.alt}></img>
         </div>
@@ -39,7 +48,6 @@ function renderPost(postInfo, post) {
   );
 }
 
-// need this for info to style teaser boxes :)
 async function getPostInfo(requestedPostId) {
   const postListPath = '/blog/posts/postlist.json';
   let postListJson = [];
@@ -48,22 +56,26 @@ async function getPostInfo(requestedPostId) {
     const response = await fetch(postListPath);
     postListJson = await response.json();
 
-    postListJson.posts.forEach((post) => {
-      console.log(post.id);
-      if (post.id == requestedPostId) {
-        return post = ({
-          id: post.id,
-          title: post.title,
-          fileName: post.fileName,
-          date: post.date,
-          img: post.img,
-          alt: post.alt
-          });
+    let post = postListJson.posts.find((post) => post.id === requestedPostId);
+    if (post) {
+    console.log(requestedPostId);
+    if (post) {
+      return post = ({
+        id: post.id,
+        title: post.title,
+        fileName: post.fileName,
+        date: post.date,
+        img: post.img,
+        alt: post.alt
+        });
+      } else {
+        console.error("Post not found.");
+        return null;
       }
-    })
+    }
   } catch (e) {
-    console.error("Uh oh! " + e);
-    return [];
+    console.error("Uh oh! Error fetching post list. " + e);
+    return null;
   }
 }
 
