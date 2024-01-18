@@ -23,6 +23,14 @@
       "date": "January 15, 2024",
       "image": "/blog/public/vite.svg",
       "alt": "vite svg"
+    },
+    {
+      "id": 4,
+      "title": "fourth post",
+      "fileName": "post4.md",
+      "date": "January 15, 2024",
+      "image": "/blog/public/vite.svg",
+      "alt": "vite svg"
     }
   ]
 }
