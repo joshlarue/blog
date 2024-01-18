@@ -32,12 +32,24 @@ function App() {
           <div className="cool-things">
             <h4>Cool things I made</h4>
             <div className="cool-items-grid">
-              <div className="cool-item"></div>
-              <div className="cool-item"></div>
-              <div className="cool-item"></div>
-              <div className="cool-item"></div>
-              <div className="cool-item"></div>
-              <div className="cool-item"></div>
+              <div className="cool-item">
+                <img src="/blog/src/assets/resume.png" alt="my resume icon" />
+              </div>
+              <div className="cool-item">
+                <img src="/blog/src/assets/headshot.png" alt="my website headshot" />
+              </div>
+              <div className="cool-item">
+                <img src="/blog/src/assets/coin.png" alt="just a fun coin. sometimes spins." />
+              </div>
+              <div className="cool-item">
+                <img src="/blog/src/assets/home.png" alt="home page of my website" />
+              </div>
+              <div className="cool-item">
+                <img src="/blog/src/assets/bulletpoint.png" alt="showing off my pixel drawing skills with a bullet point" />
+              </div>
+              <div className="cool-item">
+                <img src="/blog/src/assets/blog.png" alt="my blog icon" />
+              </div>
             </div>
           </div>
         </div>
