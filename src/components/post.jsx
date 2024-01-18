@@ -4,32 +4,29 @@ import { useEffect, useState } from "react";
 
 function Post(props) {
   const postId = props.requestedPostId;
-  let fetchedPost = "";
-  let postInfo = {};
+  const [fetchedPost, setPost] = useState("Hello this is my post. What are you doing here");
+  const [postInfo, setPostInfo] = useState();
 
-  const fetchPost = new Promise(useEffect(() => {
-    async function fetchData() {
-      postInfo = await getPostInfo(postId);
-      fetchedPost = await getPost(postId);
+  useEffect(() => {
+    const fetchData = async () => {
+      setPostInfo(await getPostInfo(postId));
+      setPost(await getPost(postId));
     }
-
     fetchData();
-  }, []));
-
+  }, [postId]);
 
   return (
     <div className="post">
       {renderPost(postInfo, fetchedPost)}
     </div>
   )
-}
+}//DOMPurify.sanitize(micromark(post)) <div className="post-text" dangerouslySetInnerHTML={{__html: "test"}}></div>
 
 function renderPost(postInfo, post) {
-  console.log(postInfo);
   return (
       <div className="post-bkg" key={postInfo.id}>
         <div className="post-header"><h4>{postInfo.title}</h4></div>
-        <div className="post-text" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(micromark(post))}}></div>
+        
         <div className="more-info">
           <div className="post-read-more"><p>read more</p></div>
           <div className="post-featured-tag"><p>{ postInfo.id === 0 ? "Featured article" : null }</p></div>
@@ -81,6 +78,7 @@ async function getPost(postId) {
   }
 
   const tempPost = await new Promise(fetchPromises);
+  console.log(tempPost);
   return tempPost.filter((content) => content !== null);
 }
 
