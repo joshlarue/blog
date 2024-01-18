@@ -89,6 +89,7 @@ h5 {
 p, li, a {
   font-size: var(--p);
   line-height: 1.5;
+  color: var(--text);
 }
 a {
   text-decoration: none;
@@ -151,9 +152,8 @@ main {
 .site-icons {
   height: 5rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  gap: 2rem;
 }
 
 .social-icon-img {
@@ -164,30 +164,43 @@ main {
   background-color: var(--secondary);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  align-items: center;
+  justify-content: center;
   padding: 1rem;
 }
 
 .cool-things h4 {
-  padding-bottom: 2rem;
+  padding-bottom: 5rem;
+  width: 100%;
+  text-align: left;
 }
 
 .cool-items-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  width: 100%;
 }
 
 .cool-item {
-  width: 10rem;
-  height: 10rem;
-  align-self: center;
-  justify-self: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.cool-things:hover {
+  background-color: var(--accent);
+}
+.cool-item:hover {
+  background-color: var(--base);
+  box-shadow: 0px 0px 5px 5px var(--base);
+  cursor: pointer;
 }
 
 .cool-item img {
-  width: 10rem;
-  height: 10rem;
+  max-width: 50%;
 }
 
 .articles-container {

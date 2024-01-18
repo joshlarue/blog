@@ -2,9 +2,12 @@ import { useState } from 'react'
 import './App.css'
 import { micromark } from 'micromark'
 import PostTeaser from './components/PostTeaser';
+import { Routes, Route } from 'react-router-dom';
+import Post from './components/post';
 
 
 function App() {
+  const [requestedPostId, setRequestedPostId] = useState();
 
   return (
     <>
@@ -54,7 +57,10 @@ function App() {
           </div>
         </div>
         <div className="articles-container">
-          <PostTeaser />
+        <Routes>
+          <Route exact strict path="blog" element={<PostTeaser setRequestedPostId={setRequestedPostId}/>} />
+          <Route path={"blog/post/*"} element={<Post requestedPostId={requestedPostId} />} />
+        </Routes>
         </div>
       </main>
     </>
