@@ -31,14 +31,18 @@ function renderTeasers(postList, posts) {
   return postList.map((post, index) => ( // issue: if one file doesn't load then entire order is messed up ---- postList.posts.slice().reverse().map()
       <div className="teaser-bkg" key={post.id}>
         <div className="teaser-l">
-          <div className="teaser-header">{post.title}</div>
+          <div className="teaser-header"><h4>{post.title}</h4></div>
           <div className="teaser-text" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(micromark(posts[index]))}}></div>
-          <div className="teaser-read-more">read more</div>
-          <div className="teaser-featured-tag">{ index === 0 ? "Featured article" : "" }</div>
-          <div className="teaser-date">{post.date}</div>
+          <div className="more-info">
+            <div className="teaser-read-more"><p>read more</p></div>
+            <div className="teaser-featured-tag"><p>{ index === 0 ? "Featured article" : null }</p></div>
+            <div className="teaser-date"><p>{post.date}</p></div>
+          </div>
         </div>
         <div className="teaser-r">
-          <img className="teaser-img" src={post.img} alt={post.alt}></img>
+          <div className="teaser-img-container">
+            <img className="teaser-img" src="/blog/src/assets/programming.jpg" alt={post.alt}></img>
+          </div>
         </div>
       </div>
   ));
