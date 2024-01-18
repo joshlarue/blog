@@ -32,7 +32,7 @@ function renderTeasers(postList, posts) {
       <div className="teaser-bkg" key={post.id}>
         <div className="teaser-l">
           <div className="teaser-header">{post.title}</div>
-          <div className="teaser-text" dangerouslySetInnerHTML={{__html: micromark(posts[index])}}></div>
+          <div className="teaser-text" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(micromark(posts[index]))}}></div>
           <div className="teaser-read-more">read more</div>
           <div className="teaser-featured-tag">{ index === 0 ? "Featured article" : "" }</div>
           <div className="teaser-date">{post.date}</div>
