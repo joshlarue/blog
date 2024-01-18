@@ -57,7 +57,6 @@ async function getPostInfo(requestedPostId) {
     postListJson = await response.json();
 
     let post = postListJson.posts.find((post) => post.id === requestedPostId);
-    if (post) {
     console.log(requestedPostId);
     if (post) {
       return post = ({
@@ -67,11 +66,10 @@ async function getPostInfo(requestedPostId) {
         date: post.date,
         img: post.img,
         alt: post.alt
-        });
-      } else {
-        console.error("Post not found.");
-        return null;
-      }
+      });
+    } else {
+      console.error("Post not found.");
+      return null;
     }
   } catch (e) {
     console.error("Uh oh! Error fetching post list. " + e);
@@ -81,17 +79,19 @@ async function getPostInfo(requestedPostId) {
 
 async function getPost(postId) {
   const postsDir = "/blog/posts";
-  const fetchPromises = async () => {
+  try {
     const response = await fetch(`${postsDir}/${postId}.md`);
     if (response.ok) {
-      return response.text();
+      const tempPost = await response.text();
+      return tempPost !== null ? tempPost : null;
+    } else {
+      console.error("Uh oh! " + e)
+      return null;
     }
+  } catch (e) {
+    console.error("Uh oh! " + e);
     return null;
   }
-
-  const tempPost = await new Promise(fetchPromises);
-  console.log(tempPost);
-  return tempPost.filter((content) => content !== null);
 }
 
 export default Post;
