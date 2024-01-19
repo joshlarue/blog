@@ -28,13 +28,13 @@ function App() {
             </div>
             <div className="site-icons">
               <div className="social-icon-img-wrapper">
-                <img src="/blog/src/assets/mastodon-logo.png" alt="mastodon logo" className="social-icon-img"></img>
+                <img src="src/assets/mastodon-logo.png" alt="mastodon logo" className="social-icon-img"></img>
               </div>
               <div className="social-icon-img-wrapper">
-                <img src="/blog/src/assets/linkedin-logo.png" alt="linkedin logo" className="social-icon-img"></img>
+                <img src="src/assets/linkedin-logo.png" alt="linkedin logo" className="social-icon-img"></img>
               </div>
               <div className="social-icon-img-wrapper">
-                <img src="/blog/src/assets/headshot.png" alt="a lovely portrait of me" className="social-icon-img" />
+                <img src="src/assets/headshot.png" alt="a lovely portrait of me" className="social-icon-img" />
               </div>
             </div>
           </div>
@@ -42,22 +42,22 @@ function App() {
             <h4>Cool things I made</h4>
             <div className="cool-items-grid">
               <div className="cool-item">
-                <img src="/blog/src/assets/resume.png" alt="my resume icon" />
+                <img src="./src/assets/resume.png" alt="my resume icon" />
               </div>
               <div className="cool-item">
-                <img src="/blog/src/assets/headshot.png" alt="my website headshot" />
+                <img src="./src/assets/headshot.png" alt="my website headshot" />
               </div>
               <div className="cool-item">
-                <img src="/blog/src/assets/coin.png" alt="just a fun coin. sometimes spins." />
+                <img src="./src/assets/coin.png" alt="just a fun coin. sometimes spins." />
               </div>
               <div className="cool-item">
-                <img src="/blog/src/assets/home.png" alt="home page of my website" />
+                <img src="./src/assets/home.png" alt="home page of my website" />
               </div>
               <div className="cool-item">
-                <img src="/blog/src/assets/bulletpoint.png" alt="showing off my pixel drawing skills with a bullet point" />
+                <img src="./src/assets/bulletpoint.png" alt="showing off my pixel drawing skills with a bullet point" />
               </div>
               <div className="cool-item">
-                <img src="/blog/src/assets/blog.png" alt="my blog icon" />
+                <img src="./src/assets/blog.png" alt="my blog icon" />
               </div>
             </div>
           </div>

@@ -6,12 +6,19 @@ function Post(props) {
   const postId = props.requestedPostId;
   const [fetchedPost, setPost] = useState("Hello this is my post. What are you doing here");
   const [postInfo, setPostInfo] = useState();
+  const path = window.location.pathname.split("/")[3];
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setPostInfo(await getPostInfo(postId));
-        setPost(await getPost(postId));
+        if (!postId) {
+          setPostInfo(await getPostInfo(path));
+          setPost(await getPost(path));
+        } else {
+          setPostInfo(await getPostInfo(postId));
+          setPost(await getPost(postId));
+        }
+        
       } catch (e) {
         console.error("Uh oh! " + e);
       }
@@ -35,7 +42,7 @@ function renderPost(postInfo, post) {
       <div className="post-bkg" key={postInfo.id}>
         <div className="post-header"><h4>{postInfo.title}</h4></div>
         
-        <div className="more-info">
+        <div className="post-more-info">
           <div className="post-read-more"><p>read more</p></div>
           { postInfo.id === 0 ? <div className="post-featured-tag"><p>Featured article</p></div> : null }
           <div className="post-date"><p>{postInfo.date}</p></div>
@@ -48,7 +55,7 @@ function renderPost(postInfo, post) {
   );
 }
 
-async function getPostInfo(requestedPostId) {
+async function getPostInfo(postId) {
   const postListPath = '/blog/posts/postlist.json';
   let postListJson = [];
 
@@ -56,10 +63,10 @@ async function getPostInfo(requestedPostId) {
     const response = await fetch(postListPath);
     postListJson = await response.json();
 
-    let post = postListJson.posts.find((post) => post.id === requestedPostId);
-    console.log(requestedPostId);
+    let post = postListJson.posts.find((post) => post.id == postId);
+    console.log(post);
     if (post) {
-      return post = ({
+      return ({
         id: post.id,
         title: post.title,
         fileName: post.fileName,
@@ -85,7 +92,7 @@ async function getPost(postId) {
       const tempPost = await response.text();
       return tempPost !== null ? tempPost : null;
     } else {
-      console.error("Uh oh! " + e)
+      console.error("Uh oh! Response not okay. " + e)
       return null;
     }
   } catch (e) {
