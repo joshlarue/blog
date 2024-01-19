@@ -286,7 +286,8 @@ main {
 
 .teaser-r {
   display: flex;
-  justify-content: left;
+  justify-content: right;
+  margin-right: 2rem;
   align-items: center;
   width: 25%;
 }
