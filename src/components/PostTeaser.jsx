@@ -2,6 +2,7 @@ import { micromark } from "micromark";
 import DOMPurify from "dompurify";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import placeholder from '/public/images/programming.jpg';
 
 function PostTeaser(props) {
   const [posts, setPosts] = useState([]);
@@ -43,7 +44,7 @@ function renderTeasers(postList, posts, props) {
         </div>
         <div className="teaser-r">
           <div className="teaser-img-container">
-            <img className="teaser-img" src="/blog/src/assets/programming.jpg" alt={post.alt}></img>
+            <img className="teaser-img" src={placeholder} alt={post.alt}></img>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { micromark } from "micromark";
 import DOMPurify from "dompurify";
 import { useEffect, useState } from "react";
+import placeholder from '/public/images/programming.jpg';
 
 function Post(props) {
   const postId = props.requestedPostId;
@@ -49,7 +50,7 @@ function renderPost(postInfo, post) {
         </div>
         <div className="post-text" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(micromark(post))}}></div>
         <div className="post-img-container">
-          <img className="post-img" src="https://github.com/joshlarue/blog/blob/main/src/assets/programming.jpg" alt={postInfo.alt}></img>
+          <img className="post-img" src={placeholder} alt={postInfo.alt}></img>
         </div>
       </div>
   );

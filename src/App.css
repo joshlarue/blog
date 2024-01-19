@@ -123,10 +123,15 @@ main {
 
 .sidebar {
   width: 30%;
+  display: block;
+  flex-direction: column;
+}
+.sticky-side {
+  position: sticky;
+  top: 0px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  position: sticky;
 }
 
 .whoami {
@@ -221,7 +226,7 @@ main {
 }
 
 .articles-container {
-  width: 50%;
+  width: 70%;
   padding: 1rem;
   background-color: var(--primary);
   display: flex;
