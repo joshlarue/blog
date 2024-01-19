@@ -49,7 +49,7 @@ function renderPost(postInfo, post) {
         </div>
         <div className="post-text" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(micromark(post))}}></div>
         <div className="post-img-container">
-          <img className="post-img" src="/blog/src/assets/programming.jpg" alt={postInfo.alt}></img>
+          <img className="post-img" src="https://github.com/joshlarue/blog/blob/main/src/assets/programming.jpg" alt={postInfo.alt}></img>
         </div>
       </div>
   );
