@@ -114,13 +114,30 @@ a:hover {
 
 .header {
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   margin-bottom: 5rem;
   margin-top: 2rem;
 }
 .header h1 {
   text-align: left;
   font-weight: bold;
+}
+
+.header button {
+  background: var(--accent);
+  border: none;
+}
+.header button:hover {
+  box-shadow: 0px 0px 5px 5px var(--accent);
+  cursor: pointer;
+}
+.header h4 {
+  color: var(--text);
+  padding: 1.5rem;
+}
+.header a{
+  height: 100%;
+  width: 100%;
 }
 
 #root {

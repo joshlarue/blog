@@ -65,7 +65,6 @@ async function getPostInfo(postId) {
     postListJson = await response.json();
 
     let post = postListJson.posts.find((post) => post.id == postId);
-    console.log(post);
     if (post) {
       return ({
         id: post.id,

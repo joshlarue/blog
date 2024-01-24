@@ -21,6 +21,7 @@ function App() {
     <>
       <div className="header">
         <h1>Welcome to the blog of Josh LaRue</h1>
+        <button class="home-btn"><a id="home-link" href="/"><h4>go home</h4></a></button>
       </div>
       <main>
         <div className="sidebar">
