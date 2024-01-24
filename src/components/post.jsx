@@ -41,10 +41,10 @@ function renderPost(postInfo, post) {
   }
   return (
       <div className="post-bkg" key={postInfo.id}>
-        <div className="post-header"><h4>{postInfo.title}</h4></div>
+        <div className="post-header"><h2>{postInfo.title}</h2></div>
         
         <div className="post-more-info">
-          <div className="post-read-more"><p>read more</p></div>
+          <div className="post-author"><p>written by {postInfo.author}</p></div>
           { postInfo.id === 0 ? <div className="post-featured-tag"><p>Featured article</p></div> : null }
           <div className="post-date"><p>{postInfo.date}</p></div>
         </div>
@@ -73,7 +73,8 @@ async function getPostInfo(postId) {
         fileName: post.fileName,
         date: post.date,
         img: post.img,
-        alt: post.alt
+        alt: post.alt,
+        author: post.author
       });
     } else {
       console.error("Post not found.");
