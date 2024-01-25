@@ -459,12 +459,14 @@ main {
   .articles-container {
     width: 100%;
   }
+  .teaser-header {
+    width: 92.5vw;
+  }
   .teaser-text {
     height: 70%;
   }
   .post {
     width: 90vw;
-    border: 2px solid red;
   }
   .header {
     width: 95vw;
