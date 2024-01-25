@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import { micromark } from 'micromark'
 import PostTeaser from './components/PostTeaser';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import Post from './components/post';
 import blog from '/public/images/blog.png';
 import bulletpoint from '/public/images/bulletpoint.png';
@@ -22,7 +22,7 @@ function App() {
       <div className="header-band">
         <div className="header">
           <h1>Welcome to the blog of Josh LaRue</h1>
-          <button className="home-btn"><a id="home-link" href="/blog"><h5>go home</h5></a></button>
+          <button className="home-btn"><Link id="home-link" to={"blog"}><h5>go home</h5></Link></button>
         </div>
       </div>
       <main>
