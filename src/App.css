@@ -466,4 +466,7 @@ main {
     width: 90vw;
     border: 2px solid red;
   }
+  .header {
+    width: 95vw;
+  }
 }
