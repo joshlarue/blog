@@ -19,9 +19,11 @@ function App() {
 
   return (
     <>
-      <div className="header">
-        <h1>Welcome to the blog of Josh LaRue</h1>
-        <button class="home-btn"><a id="home-link" href="/"><h5>go home</h5></a></button>
+      <div className="header-band">
+        <div className="header">
+          <h1>Welcome to the blog of Josh LaRue</h1>
+          <button class="home-btn"><a id="home-link" href="/"><h5>go home</h5></a></button>
+        </div>
       </div>
       <main>
         <div className="sidebar">
