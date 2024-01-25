@@ -125,6 +125,8 @@ pre {
   padding: var(--space-s);
   width:fit-content;
   background-color: var(--accent);
+  width: 85%;
+  overflow: scroll;
 }
 code {
   font-size: var(--p);
@@ -182,7 +184,7 @@ code {
 main {
   display: flex;
   justify-content: center;
-  gap: var(--space-m);
+  gap: var(--space-s);
   width: 100%;
 }
 
@@ -432,12 +434,13 @@ main {
 
 @media(max-width: 1100px) {
   #root {
-    margin: 5rem;
+    margin: 5vw;
   }
   main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 95vw;
   }
   .header h1 {
     line-height: 2.1ch;
@@ -458,5 +461,9 @@ main {
   }
   .teaser-text {
     height: 70%;
+  }
+  .post {
+    width: 90vw;
+    border: 2px solid red;
   }
 }
