@@ -82,6 +82,8 @@ h2 {
 h3 {
   font-size: var(--h3);
   font-weight: bold;
+  line-height: 1.5;
+  padding-top: 2rem;
 }
 h4 {
   font-size: var(--h4);
@@ -100,7 +102,7 @@ p, li, a {
 }
 a {
   text-decoration: none;
-  color: var(--accent);
+  color: var(--primary);
 }
 ul {
   list-style-type: disc;
@@ -111,12 +113,25 @@ li {
 a:hover {
   text-decoration: underline;
 }
+pre {
+  margin-block: 5rem;
+  padding: 3rem;
+  width:fit-content;
+  background-color: var(--accent);
+}
+code {
+  font-size: var(--p);
+  color: var(--text);
+  font-family: 'Roboto Mono';
+}
 
 .header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5rem;
   margin-top: 2rem;
+  background-color:black;
+  padding: 3em;
 }
 .header h1 {
   text-align: left;
@@ -131,13 +146,14 @@ a:hover {
   box-shadow: 0px 0px 5px 5px var(--accent);
   cursor: pointer;
 }
-.header h4 {
+.header h5 {
   color: var(--text);
   padding: 1.5rem;
 }
 .header a{
   height: 100%;
   width: 100%;
+  text-decoration: none;
 }
 
 #root {
@@ -148,7 +164,7 @@ a:hover {
 main {
   display: flex;
   justify-content: space-between;
-  gap: 5rem;
+  gap: 2rem;
 }
 
 .sidebar {
@@ -261,7 +277,9 @@ main {
   display: flex;
   flex-direction: row;
 }
-
+.teaser {
+  width: 100%;
+}
 .teaser-bkg {
   background-color: rgb(0, 0, 0);
   display: flex;

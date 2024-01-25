@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import placeholder from '/public/images/programming.jpg';
 
 function Post(props) {
-  const postId = props.requestedPostId;
+  const postFile = props.requestedPostFile;
   const [fetchedPost, setPost] = useState("Hello this is my post. What are you doing here");
   const [postInfo, setPostInfo] = useState();
   const path = window.location.pathname.split("/")[3];
@@ -12,12 +12,12 @@ function Post(props) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        if (!postId) {
+        if (!postFile) {
           setPostInfo(await getPostInfo(path));
           setPost(await getPost(path));
         } else {
-          setPostInfo(await getPostInfo(postId));
-          setPost(await getPost(postId));
+          setPostInfo(await getPostInfo(postFile));
+          setPost(await getPost(postFile));
         }
         
       } catch (e) {
@@ -26,7 +26,7 @@ function Post(props) {
     }
   
     fetchData();
-  }, [postId]);
+  }, [postFile]);
 
   return (
     <div className="post">
@@ -56,7 +56,7 @@ function renderPost(postInfo, post) {
   );
 }
 
-async function getPostInfo(postId) {
+async function getPostInfo(postFile) {
   const postListPath = '/blog/posts/postlist.json';
   let postListJson = [];
 
@@ -64,7 +64,7 @@ async function getPostInfo(postId) {
     const response = await fetch(postListPath);
     postListJson = await response.json();
 
-    let post = postListJson.posts.find((post) => post.id == postId);
+    let post = postListJson.posts.find((post) => post.fileName == postFile);
     if (post) {
       return ({
         id: post.id,
@@ -85,10 +85,10 @@ async function getPostInfo(postId) {
   }
 }
 
-async function getPost(postId) {
+async function getPost(postFile) {
   const postsDir = "/blog/posts";
   try {
-    const response = await fetch(`${postsDir}/${postId}.md`);
+    const response = await fetch(`${postsDir}/${postFile}`);
     if (response.ok) {
       const tempPost = await response.text();
       return tempPost !== null ? tempPost : null;

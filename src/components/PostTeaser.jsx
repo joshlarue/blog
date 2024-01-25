@@ -37,7 +37,7 @@ function renderTeasers(postList, posts, props) {
           <div className="teaser-header"><h4>{post.title}</h4></div>
           <div className="teaser-text" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(micromark(posts[index]))}}></div>
           <div className="more-info">
-            <Link to={"post/" + post.id} className="teaser-read-more" onClick={() => handleClick(post.id, props)}><p>read more</p></Link>
+            <Link to={"post/" + post.fileName} className="teaser-read-more" onClick={() => handleClick(post.fileName, props)}><p>read more</p></Link>
             { index === 0 ? <div className="teaser-featured-tag"><p>Featured article</p></div> : null }
             <div className="teaser-date"><p>{post.date}</p></div>
           </div>
@@ -51,8 +51,8 @@ function renderTeasers(postList, posts, props) {
   ));
 }
 
-const handleClick = (postId, props) => {
-  props.setRequestedPostId(postId);
+const handleClick = (postFile, props) => {
+  props.setRequestedPostFile(postFile);
 };
 
 // need this for info to style teaser boxes :)
@@ -81,7 +81,7 @@ async function getPostList() {
 async function getPosts(postList) {
   const postsDir = "/blog/posts";
   const fetchPromises = postList.map(async (post) => {
-    const response = await fetch(`${postsDir}/${post.id}.md`);
+    const response = await fetch(`${postsDir}/${post.fileName}`);
     if (response.ok) {
       return response.text();
     }

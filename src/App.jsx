@@ -15,13 +15,13 @@ import resume from '/public/images/resume.png';
 
 
 function App() {
-  const [requestedPostId, setRequestedPostId] = useState();
+  const [requestedPostFile, setRequestedPostFile] = useState();
 
   return (
     <>
       <div className="header">
         <h1>Welcome to the blog of Josh LaRue</h1>
-        <button class="home-btn"><a id="home-link" href="/"><h4>go home</h4></a></button>
+        <button class="home-btn"><a id="home-link" href="/"><h5>go home</h5></a></button>
       </div>
       <main>
         <div className="sidebar">
@@ -75,8 +75,8 @@ function App() {
         </div>
         <div className="articles-container">
         <Routes>
-          <Route exact strict path="blog" element={<PostTeaser setRequestedPostId={setRequestedPostId}/>} />
-          <Route path={"blog/post/*"} element={<Post requestedPostId={requestedPostId} />} />
+          <Route exact strict path="blog" element={<PostTeaser setRequestedPostFile={setRequestedPostFile}/>} />
+          <Route path={"blog/post/*"} element={<Post requestedPostFile={requestedPostFile} />} />
         </Routes>
         </div>
       </main>
