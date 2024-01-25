@@ -89,6 +89,7 @@ h4 {
   font-size: var(--h4);
   letter-spacing: 0.09ch;
   font-weight: bold;
+  line-height: 2ch;
 }
 h5 {
   font-size: var(--h5);
@@ -130,16 +131,16 @@ code {
   justify-content: center;
   width: 100vw;
   margin-bottom: 3rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
   background-color:black;
   box-sizing: border-box;
-  padding: 3em;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   width: calc(100% - 30rem);
+  padding-block: 2rem;
 }
 
 .header h1 {
@@ -169,7 +170,6 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
   margin-inline: 15rem;
 }
 

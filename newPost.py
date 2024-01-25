@@ -3,8 +3,10 @@ import json
 
 title = input("What is this post's title?\n")
 today = str(date.today())
-image = input("Enter image filename (you will still have to move it to /blog/public/):\n")
 fileName = input("What is this post's filename? (you will still have to move it to /blog/public/posts)\n")
+with open(f'public/posts/{fileName}', 'w') as file:
+  file.write(" ")
+image = input("Enter image filename (you will still have to move it to /blog/public/):\n")
 alt = input("Enter alt text:\n")
 author = input("Who is the author?\n")
 

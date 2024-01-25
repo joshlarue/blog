@@ -29,8 +29,7 @@ function PostTeaser(props) {
 }
 
 function renderTeasers(postList, posts, props) {
-  console.log(postList);
-  
+
   return postList.map((post, index) => ( // issue: if one file doesn't load then entire order is messed up ---- postList.posts.slice().reverse().map()
       <div className="teaser-bkg" key={post.id}>
         <div className="teaser-l">
@@ -38,7 +37,7 @@ function renderTeasers(postList, posts, props) {
           <div className="teaser-text" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(micromark(posts[index]))}}></div>
           <div className="more-info">
             <Link to={"post/" + post.fileName} className="teaser-read-more" onClick={() => handleClick(post.fileName, props)}><p>read more</p></Link>
-            { index === 0 ? <div className="teaser-featured-tag"><p>Featured article</p></div> : null }
+            { post.id === posts.length-1 ? <div className="teaser-featured-tag"><p>Featured article</p></div> : null }
             <div className="teaser-date"><p>{post.date}</p></div>
           </div>
         </div>
