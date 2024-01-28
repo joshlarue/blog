@@ -194,8 +194,8 @@ main {
   flex-direction: column;
 }
 .sticky-side {
-  position: sticky;
-  top: var(--space-s);
+  /* position: sticky;
+  top: var(--space-s); */
   display: flex;
   flex-direction: column;
   gap: var(--space-s);
