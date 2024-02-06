@@ -5,7 +5,7 @@ import PostTeaser from './components/PostTeaser';
 import { Routes, Route, Link } from 'react-router-dom';
 import Post from './components/post';
 import blog from '/public/images/blog.png';
-import bulletpoint from '/public/images/bulletpoint.png';
+import github from '/public/images/github.png';
 import coin from '/public/images/coin.png';
 import headshot from '/public/images/headshot.png';
 import home from '/public/images/home.png';
@@ -31,7 +31,7 @@ function App() {
             <div className="whoami">
               <h3>Who am I?</h3>
               <div className="whoami-textbox">
-                <p>An aspiring freelance full-stack developer with a love for writing and weird design. Contact me through Mastodon or LinkedIn to get talking!</p>
+                <p>An aspiring full-stack developer with a love for writing and weird design. Contact me through Mastodon or LinkedIn to get talking!</p>
               </div>
             </div>
             <div className="site-socials-container">
@@ -48,10 +48,13 @@ function App() {
                 <div className="social-icon-img-wrapper">
                   <img src={headshot} alt="a lovely portrait of me" className="social-icon-img" />
                 </div>
+                <div className="social-icon-img-wrapper">
+                  <img src={github} alt="a github logo!" className="social-icon-img" />
+                </div>
               </div>
             </div>
             <div className="cool-things">
-              <h4>Cool things I made</h4>
+              <h4>Cool things I've made</h4>
               <div className="cool-items-grid">
                 <div className="cool-item">
                   <img src={resume} alt="my resume icon" />
@@ -66,10 +69,10 @@ function App() {
                   <img src={home} alt="home page of my website" />
                 </div>
                 <div className="cool-item">
-                  <img src={bulletpoint} alt="showing off my pixel drawing skills with a bullet point" />
+                  <img src={blog} alt="my blog icon" />
                 </div>
                 <div className="cool-item">
-                  <img src={blog} alt="my blog icon" />
+                  <img src={github} alt="a github logo!" />
                 </div>
               </div>
             </div>

@@ -139,7 +139,7 @@ code {
   justify-content: center;
   width: 100vw;
   margin-block: var(--space-m);
-  background-color:black;
+  background-color: black;
   box-sizing: border-box;
 }
 
@@ -233,7 +233,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: var(--space-s);
+  gap: calc(var(--space-s)/2);
 }
 
 .social-icon-img-wrapper {
