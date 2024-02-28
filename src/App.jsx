@@ -40,16 +40,16 @@ function App() {
               </div>
               <div className="site-icons">
                 <div className="social-icon-img-wrapper">
-                  <img src={mastodon} alt="mastodon logo" className="social-icon-img"></img>
+                  <a href="https://mastodon.social/@joshlarue" className="social-icon-img"><img src={mastodon} alt="mastodon logo" className="social-icon-img"></img></a>
                 </div>
                 <div className="social-icon-img-wrapper">
-                  <img src={linkedin} alt="linkedin logo" className="social-icon-img"></img>
+                  <a href="https://www.linkedin.com/in/joshua-larue-swd/" className="social-icon-img"><img src={linkedin} alt="linkedin logo" className="social-icon-img"></img></a>
                 </div>
                 <div className="social-icon-img-wrapper">
-                  <img src={headshot} alt="a lovely portrait of me" className="social-icon-img" />
+                  <a href="https://joshlarue.github.io" className="social-icon-img"><img src={headshot} alt="a lovely portrait of me" className="social-icon-img"/></a>
                 </div>
                 <div className="social-icon-img-wrapper">
-                  <img src={github} alt="a github logo!" className="social-icon-img" />
+                  <a href="https://github.com/joshlarue" className="social-icon-img"><img src={github} alt="a github logo!" className="social-icon-img"/></a>
                 </div>
               </div>
             </div>
@@ -57,22 +57,22 @@ function App() {
               <h4>Cool things I've made</h4>
               <div className="cool-items-grid">
                 <div className="cool-item">
-                  <img src={resume} alt="my resume icon" />
+                  <a href="https://joshlarue.github.io/nyah-portfolio"><img src={resume} alt="my resume icon" /> </a>
                 </div>
                 <div className="cool-item">
-                  <img src={headshot} alt="my website headshot" />
+                <a href="https://joshlarue.github.io/blog"><img src={blog} alt="my blog icon" /></a>
                 </div>
                 <div className="cool-item">
-                  <img src={coin} alt="just a fun coin. sometimes spins." />
+                  <a href="https://joshlarue.github.io"><img src={headshot} alt="my website headshot" /></a>
                 </div>
                 <div className="cool-item">
-                  <img src={home} alt="home page of my website" />
+                  <a href="https://joshlarue.github.io"><img src={coin} alt="just a fun coin. sometimes spins." /></a>
                 </div>
                 <div className="cool-item">
-                  <img src={blog} alt="my blog icon" />
+                <a href="https://joshlarue.github.io"><img src={home} alt="home page of my website" /></a>
                 </div>
                 <div className="cool-item">
-                  <img src={github} alt="a github logo!" />
+                <a href="https://github.com/joshlarue"><img src={github} alt="a github logo!" /></a>
                 </div>
               </div>
             </div>
