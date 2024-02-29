@@ -40,7 +40,7 @@ function App() {
               </div>
               <div className="site-icons">
                 <div className="social-icon-img-wrapper">
-                  <a href="https://mastodon.social/@joshlarue" className="social-icon-img"><img src={mastodon} alt="mastodon logo" className="social-icon-img"></img></a>
+                  <a rel="me" href="https://mastodon.social/@joshlarue" className="social-icon-img"><img src={mastodon} alt="mastodon logo" className="social-icon-img"></img></a>
                 </div>
                 <div className="social-icon-img-wrapper">
                   <a href="https://www.linkedin.com/in/joshua-larue-swd/" className="social-icon-img"><img src={linkedin} alt="linkedin logo" className="social-icon-img"></img></a>
